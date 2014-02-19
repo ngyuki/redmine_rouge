@@ -38,7 +38,7 @@ module Redmine
           formatter = ::Rouge::Formatters::HTML.new(:line_numbers => false, :wrap => false)
           output = ::Rouge.highlight(text, lexer, formatter)
         end
-        end
+      end
     end
   end
 
