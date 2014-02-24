@@ -1,3 +1,5 @@
+# coding: utf-8
+
 require 'redmine/syntax_highlighting'
 require 'rouge'
 
@@ -28,8 +30,10 @@ module Redmine
         end
 
         def highlight(text, lexer, by_filename)
+          text.force_encoding('utf-8')
+
           # delete BOM
-          text.gsub!("\xEF\xBB\xBF".force_encoding('UTF-8'), '')
+          text.gsub!("\xEF\xBB\xBF", '')
 
           # delete last CRLF
           text.chomp!
